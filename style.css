@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "General Sans";
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    width: 100%;
+}
+
+#hero{
+    height: 100vh;
+    width: 100%;
+    color: #fff;
+    background-color: black;
+
+}
+
+#nav{
+    width: 100%;
+    color: #fff;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+#nav a{
+    text-decoration: none;;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    
+}
+
+#heading{
+    margin-top: 50px;
+}
+
+#heading h1{
+    font-size: 9vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    opacity: .6;
+    margin-left: 30px;
+}
+
+#blocktext{
+    width: fit-content;
+    
+}
+
+
+#blocktext .h1{
+    margin-left: 230px;
+   
+}
+
+#blocktext h5{
+    text-align: right;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+#smallheading{
+    margin-top: 150px;
+}
+
+#smallheading h5{
+    text-align: right;
+    padding-right: 50px;
+    margin-top: .5vw;
+    text-transform: uppercase;
+    font-size: 1vw;
+
+}
+
+#herofooter{
+    padding: 0 2vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 3%;
+   
+}
+
+#herofooter a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#herofooter #iconset{
+    display: flex;
+    gap: 5px;
+}
+
+#herofooter #circle{
+    height: 25px;
+    width: 25px;
+    background-color: #888;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
