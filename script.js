@@ -10,7 +10,35 @@ function mouseFollower() {
     })
 }
 
+function firstPageAnim(){
+    var tl = gsap.timeline();
+
+    tl.from("#nav", {
+        y: -10,
+        opacity: 0,
+        duration: 1.5,
+        ease: Expo.easeInOut
+    })
+
+    tl.to(".boundinlem", {
+        y: '0',
+        stagger: .2,
+        duration: 1.5,
+        ease: Expo.easeInOut,
+        delay: -1,
+    })
+
+    tl.from("#herofooter", {
+        y: '-10',
+        opacity: 0,
+        duration: 1.5,
+        delay: -1,
+        ease: Expo.easeInOut
+    })
+}
+
 mouseFollower();
+firstPageAnim();
 
 
 ///var crsr =  document.querySelector("#minicircle")
