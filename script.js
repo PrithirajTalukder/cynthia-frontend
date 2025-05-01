@@ -4,9 +4,9 @@ const scroll = new LocomotiveScroll({
 });
 
 
-function mouseFollower() {
+function mouseFollower(xscale, yscale) {
     window.addEventListener("mousemove", function(dets){
-        document.querySelector("#minicircle").style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`;
+        document.querySelector("#minicircle").style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(${xscale}, ${yscale})`;
     })
 }
 
@@ -37,6 +37,7 @@ function firstPageAnim(){
     })
 }
 
+var timeout;
 
 function flatCircle(){
     var xscale = 1;
@@ -47,15 +48,22 @@ function flatCircle(){
     var yprev = 0;
 
     window.addEventListener("mousemove", function(dets){
+        
+        clearTimeout(timeout);
 
-        var xdiff = dets.clientX - xprev;
-        var ydiff = dets.clientY - yprev;
+        xscale = gsap.utils.clamp(.8, 1.2, dets.clientX - xprev);
+        yscale = gsap.utils.clamp(.8, 1.2, dets.clientY - yprev);
 
         xprev = dets.clientX;
         yprev = dets.clientY;
 
-        console.log(xdiff, ydiff);
-    })
+        mouseFollower(xscale, yscale);
+
+        timeout = this.setTimeout(function(){
+            document.querySelector("#minicircle").style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(1, 1)`;
+        })
+
+    }, 100)
 
 }
 
