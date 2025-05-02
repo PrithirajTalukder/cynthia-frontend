@@ -72,3 +72,16 @@ firstPageAnim();
 flatCircle();
 
 
+document.querySelectorAll(".elem").forEach(function (elem){
+
+    elem.addEventListener("mousemove", function(dets){
+        gsap.to(elem.querySelector("img"), {
+            opacity: 1,
+            display: 'block',
+            ease: Power1,
+            
+        });
+    });
+
+});
+
