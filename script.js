@@ -7,7 +7,7 @@ const scroll = new LocomotiveScroll({
 function mouseFollower(xscale, yscale) {
     window.addEventListener("mousemove", function(dets){
         document.querySelector("#minicircle").style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(${xscale}, ${yscale})`;
-    })
+    });
 }
 
 function firstPageAnim(){
@@ -74,14 +74,39 @@ flatCircle();
 
 document.querySelectorAll(".elem").forEach(function (elem){
 
+    var diffrot = 0;
+    var rotate = 0;
+
     elem.addEventListener("mousemove", function(dets){
+
+        var diff = dets.clientY - elem.getBoundingClientRect().top;
+        diffrot  = dets.clientX - rotate;
+        rotate = dets.clientX;
         gsap.to(elem.querySelector("img"), {
             opacity: 1,
             display: 'block',
-            ease: Power1,
+            ease: Power3,
+            top: diff,
+            left: dets.clientX,
+            rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5),
             
         });
     });
+
+
+    elem.addEventListener("mouseleave", function(dets){
+
+        
+        gsap.to(elem.querySelector("img"), {
+            opacity: 0,
+            
+            ease: Power3,
+
+           
+            
+        });
+    });
+
 
 });
 

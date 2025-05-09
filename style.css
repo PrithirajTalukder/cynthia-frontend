@@ -17,7 +17,7 @@ html, body{
     background-color: #fff;
     border-radius: 50%;
     position: absolute;
-    z-index: 99999;
+    z-index: 9999999;
     
 }
 
@@ -164,6 +164,7 @@ html, body{
     padding: 4vw 3vw;
     padding-right: 0;
     border-top: 1px solid #888;
+    position: relative;
 }
 
 .elem h1{
@@ -178,9 +179,12 @@ html, body{
 }
 
 .elem img{
-    height: 400px;
+    opacity: 0;
+    pointer-events: none;
+    height: 140%;
+    z-index: 999;
     position: absolute;
-    display: none;
+    transform: translate(-50%, -50%);
 }
 
 #linear{
